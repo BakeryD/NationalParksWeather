@@ -1,0 +1,11 @@
+﻿@model IList<Survey>
+@{
+    ViewData["Title"] = "Index";
+}
+
+@if(TempData["Show_Message"] != null)
+{
+    <p class="success">Your survey was successfuly submitted!</p>
+}
+<h2>Index</h2>
+

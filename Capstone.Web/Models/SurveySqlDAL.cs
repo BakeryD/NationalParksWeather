@@ -40,6 +40,34 @@ namespace Capstone.Web.Models
             return results;
         }
 
+		/// <summary>
+		/// Saves a new survey to the system.
+		/// </summary>
+		public void SaveSurvey(Survey newSurvey)
+		{
+			try
+			{
+				using (SqlConnection conn = new SqlConnection(ConnectionString))
+				{
+					conn.Open();
+
+					string sql = $"INSERT INTO survey_result VALUES(@parkCode, @emailAddress, @state, @activityLevel)";
+					SqlCommand cmd = new SqlCommand(sql, conn);
+					cmd.Parameters.AddWithValue("@parkCode", newSurvey.ParkCode);
+					cmd.Parameters.AddWithValue("@emailAddress", newSurvey.Email);
+					cmd.Parameters.AddWithValue("@state", newSurvey.State);
+					cmd.Parameters.AddWithValue("@activityLevel", newSurvey.ActivityLevel);
+
+					cmd.ExecuteNonQuery();
+				}
+			}
+			catch (SqlException ex)
+			{
+
+				throw ex;
+			}
+		}
+
         public Survey MapRowToSurvey(SqlDataReader reader)
         {
             return new Survey()
@@ -50,7 +78,7 @@ namespace Capstone.Web.Models
                 ActivityLevel= Convert.ToString(reader["activityLevel"]),
                 Email= Convert.ToString(reader["emailAddress"])
 
-               
+ 
             };
         }
     }
