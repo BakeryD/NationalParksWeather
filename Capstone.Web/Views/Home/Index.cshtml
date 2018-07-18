@@ -1,4 +1,22 @@
-﻿@{
+﻿@model IList<Park>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
+@* TABLE VS DIV *@
+
+<table class="table table-striped">
+    <tbody>
+        @foreach (var park in Model)
+        {
+            <tr>
+                <td><a asp-action="Detail" asp-controller="Home" asp-route-id="@park.ParkCode"><img src="~/images/@park.ImageName" /></a></td>
+                <td>@park.Name</td>
+                <td>@park.State</td>
+                <td>@park.Description</td>
+            </tr>
+        }
+    </tbody>
+
+</table>

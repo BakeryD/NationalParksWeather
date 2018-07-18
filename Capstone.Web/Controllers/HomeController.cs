@@ -10,11 +10,26 @@ namespace Capstone.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private ParkSqlDAL pdal;
+
+        public HomeController()
         {
-            return View();
+            this.pdal = new ParkSqlDAL(@"Data Source=.\sqlexpress;Initial Catalog=NPGeek;Integrated Security=True");
         }
 
+        public IActionResult Index()
+        {
+            var parks = pdal.GetAllParks();
+
+            return View(parks);
+        }
+
+        public IActionResult Detail (string id)
+        {
+            var park = pdal.GetPark(id);
+
+            return View(park);
+        }
       
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

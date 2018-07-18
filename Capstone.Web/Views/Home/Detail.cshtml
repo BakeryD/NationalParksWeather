@@ -1,0 +1,17 @@
+﻿@model Park
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<h2>@Model.Name</h2>
+<img src="~/images/@Model.ImageName" />
+
+<div class="park-info">
+    @{ Type type = Model.GetType();
+        System.Reflection.PropertyInfo[] properties = type.GetProperties();
+        foreach (var prop in properties)
+        {
+            <p>@prop.Name : <br /> @prop.GetValue(Model) </p>
+        }
+}
+</div>
