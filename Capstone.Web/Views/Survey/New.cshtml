@@ -5,7 +5,7 @@
 
 <h2>New Survey</h2>
 
-<form>
+<form method="post" asp-action="new" asp-controller="survey">
     <div>
         <label asp-for="ParkCode">Favorite 
         National Park</label>
@@ -17,7 +17,7 @@
     </div>
     <div>
         <label asp-for="State"></label>
-        <select asp-for="State"></select> 
+        <select asp-for="State" asp-items="Survey.StatesOfResidence"></select> 
     </div>
     <div>
         <label asp-for="ActivityLevel"></label>

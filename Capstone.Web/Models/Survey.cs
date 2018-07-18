@@ -9,7 +9,7 @@ namespace Capstone.Web.Models
 {
     public class Survey
     {
-        public int ID { get; set; }
+        //public int ID { get; set; }
 
 		[Required(ErrorMessage = "*")]
         public string ParkCode { get; set; }

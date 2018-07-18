@@ -26,7 +26,9 @@ namespace Capstone.Web.Controllers
         /// <returns>The page with the results bound to it.</returns>
         public IActionResult Index()
         {
-            return View();
+            var favoriteParks = dal.GetAllResults();
+
+            return View(favoriteParks);
         }
 
 		[HttpGet]

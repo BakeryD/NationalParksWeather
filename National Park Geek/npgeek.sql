@@ -129,3 +129,10 @@ INSERT INTO weather VALUES ('RMNP',4,33,47,'partly cloudy');
 INSERT INTO weather VALUES ('RMNP',5,30,43,'rain');
 
 COMMIT;
+
+--Query for Favorite Park Page
+select park.parkName,park.parkCode, Count(survey_result.state)
+from park
+Inner Join survey_result on survey_result.parkCode = park.parkCode
+group by park.parkName,park.parkCode
+

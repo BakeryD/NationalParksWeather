@@ -1,20 +1,29 @@
-﻿@model IList<Survey>
+﻿@model IList<FavoriteParkModel>
 @{
     ViewData["Title"] = "Index";
 }
 
 @if(TempData["Show_Message"] != null)
 {
-    <p class="success">Your survey was successfuly submitted!</p>
+    <p class="alert-success text-center text-capitalize">Your survey was successfuly submitted!</p>
 }
-<h2>Index</h2>
+<h2 class="text-center">Favorite Parks!</h2>
+<br />
+<p>Add a Park Survey <a asp-controller="survey" asp-action="new">Here!</a></p>
 <table class="table table-striped">
-    @foreach (var survey in Model)
+    <thead>
+        <tr>
+            <th></th>
+            <th><strong>Park Name</strong></th>
+            <th><strong>Survey Count</strong></th>
+        </tr>
+    </thead>
+    @foreach (var fav in Model)
     {
         <tr>
-
+            <td><img src="~/images/@fav.ImageName" /></td>
+            <td>@fav.Name</td>
+            <td>@fav.SurveyCount Surveys submitted</td>
         </tr>
     }
-
-
 </table>
