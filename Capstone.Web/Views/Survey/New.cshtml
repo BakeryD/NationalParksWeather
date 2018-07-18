@@ -9,7 +9,7 @@
     <div>
         <label asp-for="ParkCode">Favorite 
         National Park</label>
-        <select asp-for="ParkCode"></select>
+        <select asp-for="ParkCode" asp-items="ViewBag.ParkCodes"></select>
     </div>
     <div>
         <label asp-for="Email"></label>

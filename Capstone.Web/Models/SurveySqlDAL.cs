@@ -81,5 +81,29 @@ namespace Capstone.Web.Models
  
             };
         }
+
+        public IList<string> GetParkCodes()
+        {
+            var codes = new List<string>();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+                    conn.Open();
+                    var cmd = new SqlCommand("Select parkCode From park;", conn);
+                    var reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        codes.Add(Convert.ToString(reader["parkCode"]));
+                    }
+                }
+            }
+            catch (SqlException x)
+            {
+
+                throw;
+            }
+            return codes;
+        }
     }
 }

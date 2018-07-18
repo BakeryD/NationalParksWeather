@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Capstone.Web.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Capstone.Web.Controllers
 {
@@ -14,6 +15,10 @@ namespace Capstone.Web.Controllers
 		{
 			this.dal = new SurveySqlDAL(@"Data Source =.\Sqlexpress; Initial Catalog = NPGeek; Integrated Security = True");
 		}
+
+        public IList<string> parkCodes => dal.GetParkCodes();
+
+        public IEnumerable<SelectListItem> ParkCodes => parkCodes.Select(code => new SelectListItem() { Text = code, Value = code });
 
         /// <summary>
         /// Display all the previous survey results.
@@ -27,6 +32,8 @@ namespace Capstone.Web.Controllers
 		[HttpGet]
 		public IActionResult New()
 		{
+            ViewBag.ParkCodes = ParkCodes;
+
 			return View();
 		}
 
