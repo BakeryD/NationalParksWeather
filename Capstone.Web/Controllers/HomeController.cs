@@ -11,10 +11,12 @@ namespace Capstone.Web.Controllers
     public class HomeController : Controller
     {
         private ParkSqlDAL pdal;
+        private WeatherSqlDAL wdal;
 
         public HomeController()
         {
             this.pdal = new ParkSqlDAL(@"Data Source=.\sqlexpress;Initial Catalog=NPGeek;Integrated Security=True");
+            this.wdal = new WeatherSqlDAL(@"Data Source=.\sqlexpress;Initial Catalog=NPGeek;Integrated Security=True");
         }
 
         public IActionResult Index()
@@ -27,8 +29,14 @@ namespace Capstone.Web.Controllers
         public IActionResult Detail (string id)
         {
             var park = pdal.GetPark(id);
-
-            return View(park);
+            //Get weather results for said park
+            var weather = wdal.GetWeatherForPark(id);
+            var model = new ParkDetailModel()
+            {
+                Park = park,
+                ParkWeather = weather
+            };
+            return View(model);
         }
       
 

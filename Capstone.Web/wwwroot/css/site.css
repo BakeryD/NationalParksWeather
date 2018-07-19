@@ -46,3 +46,13 @@ font-weight:bold;
     flex-direction: row;
     justify-content: space-between;
 }
+
+.weather {
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:row;
+}
+
+.weather-img {
+    height:5em;
+}
