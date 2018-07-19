@@ -20,7 +20,7 @@ namespace Capstone.Web.Models
 		[Required(ErrorMessage = "*")]
 		public string State { get; set; }
 
-		[Required(ErrorMessage = "* Field Cannot Be Blank")]
+		[Required(ErrorMessage = "*")]
 		public string ActivityLevel { get; set; }
 
 		public static List<SelectListItem> StatesOfResidence = new List<SelectListItem>()
@@ -76,5 +76,13 @@ namespace Capstone.Web.Models
 			new SelectListItem() { Text = "Wisconsin"},
 			new SelectListItem() { Text = "Wyoming"}
 		};
+
+        public static List<SelectListItem> ActivityLevels = new List<SelectListItem>()
+        {
+            new SelectListItem(){ Text="Inactive"},
+            new SelectListItem(){ Text="Sedentary"},
+            new SelectListItem(){ Text="Active"},
+            new SelectListItem(){ Text="Extremely Active"}
+        };
 	}
 }
