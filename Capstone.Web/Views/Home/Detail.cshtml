@@ -35,13 +35,13 @@
         <div class="forecast-day">
             <img class="weather-img" src="~/images/@(w.Forecast).png" />
             <p>@w.DayOfForecast</p>
-            <p>@w.High</p>
-            <p>@w.Low</p>
+            <p class="temperature">@w.High</p>
+            <p class="temperature">@w.Low</p>
             <p>@w.Forecast</p>
         </div>
 
     }
 </div>
 
-<button onclick="alertMe()" id="convertBtn">Convert To F</button>
+<button onclick="alertMe()" id="convertBtn">Convert To C</button>
 
