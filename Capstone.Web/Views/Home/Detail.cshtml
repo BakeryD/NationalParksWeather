@@ -1,12 +1,15 @@
-﻿@model Park
+﻿@model ParkDetailModel
 @{
-    ViewData["Title"] = Model.Name;
+    ViewData["Title"] = Model.Park.Name;
 }
-<h2>@Model.Name</h2>
-<img src="~/images/@Model.ImageName" />
+
+
+<h2>@Model.Park.Name</h2>
+<img class="detail-img" src="~/images/@Model.Park.ImageName" />
+
 
 <div class="park-info">
-    @{ Type type = Model.GetType();
+    @{ Type type = Model.Park.GetType();
         System.Reflection.PropertyInfo[] properties = type.GetProperties();
         foreach (var prop in properties)
         {
@@ -20,12 +23,25 @@
             }
             else
             {
-                <h4><strong>@prop.Name</strong><small><br />@prop.GetValue(Model)</small></h4>
+                <h4><strong>@prop.Name</strong><small><br />@prop.GetValue(Model.Park)</small></h4>
             }
         }
     }
 </div>
 <div class="weather">
-    <h1 id="title">Hello</h1>
-    <button id="temp-toggle" onclick="changeTitle" >Convert To Farenheit</button>
+
+    @foreach (var w in Model.ParkWeather)
+    {
+        <div class="forecast-day">
+            <img class="weather-img" src="~/images/@(w.Forecast).png" />
+            <p>@w.DayOfForecast</p>
+            <p>@w.High</p>
+            <p>@w.Low</p>
+            <p>@w.Forecast</p>
+        </div>
+
+    }
 </div>
+
+<button onclick="alertMe()" id="convertBtn">Convert To F</button>
+
