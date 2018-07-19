@@ -56,3 +56,8 @@ font-weight:bold;
 .weather-img {
     height:5em;
 }
+
+.forecast-day {
+    margin-left:1.75em;
+    margin-right:1.75em;
+}
