@@ -14,13 +14,13 @@ namespace Capstone.Web.Models
 		[Required(ErrorMessage = "*")]
         public string ParkCode { get; set; }
 
-		[Required(ErrorMessage = "*")]
+		[Required(ErrorMessage = "* Field Cannot Be Blank")]
 		public string Email { get; set; }
 
 		[Required(ErrorMessage = "*")]
 		public string State { get; set; }
 
-		[Required(ErrorMessage = "*")]
+		[Required(ErrorMessage = "* Field Cannot Be Blank")]
 		public string ActivityLevel { get; set; }
 
 		public static List<SelectListItem> StatesOfResidence = new List<SelectListItem>()

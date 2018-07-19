@@ -35,3 +35,14 @@ body {
         display: none;
     }
 }
+
+.field-validation-error {
+font-weight:bold;    
+}
+
+.park-info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
