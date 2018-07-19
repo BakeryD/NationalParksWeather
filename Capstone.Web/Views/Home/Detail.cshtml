@@ -2,7 +2,6 @@
 @{
     ViewData["Title"] = Model.Name;
 }
-
 <h2>@Model.Name</h2>
 <img src="~/images/@Model.ImageName" />
 
@@ -25,4 +24,8 @@
             }
         }
     }
+</div>
+<div class="weather">
+    <h1 id="title">Hello</h1>
+    <button id="temp-toggle" onclick="changeTitle" >Convert To Farenheit</button>
 </div>
