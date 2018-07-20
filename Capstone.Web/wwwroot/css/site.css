@@ -47,17 +47,24 @@ form > * {
 }
 
 /*** DETAIL.CSHTML ***/
-.park-info {
+.detail-park-specs {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
 }
 
+.park-specs {
+    margin-top:auto;
+    margin-bottom:auto;
+}
+
 .weather {
     display:flex;
     flex-wrap:wrap;
     flex-direction:row;
+    justify-content:center;
+    min-width:513px;
 }
 
 .weather-img {
@@ -65,7 +72,7 @@ form > * {
 }
 
 .forecast-day {
-    width:10%;
-    margin-left:1.75em;
-    margin-right:1.75em;
+    width:15%;
+    margin-left:1.2rem;
+    margin-right:1.2rem;
 }

@@ -3,9 +3,6 @@
 
 // Write your JavaScript code.
 
-//document.onload.setCookie("Unit", "F", 1);
-
-
 if (document.getElementsByClassName("detail-img").length > 0) {
     window.onload = showTemp();
 }
@@ -53,14 +50,11 @@ function showTemp() {
 
         for (var i = 0; i < temps.length; i++) {
             temps[i].textContent = convertToC(temps[i].textContent) + " °" + getCookie("Unit");
-            //console.log(temps[i]);
-
         }
     } else if (currentUnit == null || currentUnit == "F") {
         for (var i = 0; i < temps.length; i++) {
             temps[i].textContent += " °F"
         } 
-
     }
 };
 
@@ -71,17 +65,13 @@ function alertMe() {
         var temps = document.getElementsByClassName("temperature");
         for (var i = 0; i < temps.length; i++) {
             temps[i].textContent = convertToC(temps[i].textContent) + " °" + getCookie("Unit");
-           // console.log(temps[i]);
-
         }
-
     }
     else {
         buttonTxt.innerHTML = 'Convert To C';
         var temps = document.getElementsByClassName("temperature");
         for (var i = 0; i < temps.length; i++) {
             temps[i].textContent = convertToF(temps[i].textContent) + " °" + getCookie("Unit");
-            //console.log(temps[i]);
         }
     }
     switchCookie();
@@ -91,11 +81,9 @@ function alertMe() {
 
 function convertToF(num) {
     var intNum = parseInt(num);
-    // console.log("this is convert to F");
     return (intNum * (9.0 / 5.0) + 32).toPrecision(2);
 };
 function convertToC(num) {
     var intNum = parseInt(num);
-    // console.log("this is convert to C");
     return ((intNum - 32) * 5 / 9).toPrecision(2);
 };
