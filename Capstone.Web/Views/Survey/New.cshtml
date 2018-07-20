@@ -9,21 +9,21 @@
     <div class="survey-form-park">
         <label asp-for="ParkCode">Favorite 
         National Park</label>
-        <select asp-for="ParkCode" asp-items="ViewBag.ParkCodes"></select>
+        <select style="margin-left:1rem;" asp-for="ParkCode" asp-items="ViewBag.ParkCodes"></select>
     </div>
 
     <div class="survey-form-email">
         <label asp-for="Email"></label>
-        <input type="email" asp-for="Email" />
+        <input style="margin-left:12rem;" type="email" asp-for="Email" />
         <span class="text-danger" asp-validation-for="Email"></span>
     </div>
-    <div class="survey-form-state" style="margin-left:12rem;">
+    <div class="survey-form-state" >
         <label asp-for="State"></label>
-        <select asp-for="State" asp-items="Survey.StatesOfResidence"></select> 
+        <select style="margin-left: 12.3rem;" asp-for="State" asp-items="Survey.StatesOfResidence"></select> 
     </div>
     <div class="survey-form-activity">
         <label asp-for="ActivityLevel"></label>
-        <select asp-items="Survey.ActivityLevels" asp-for="ActivityLevel"></select>
+        <select style="margin-left: 7rem;" asp-items="Survey.ActivityLevels" asp-for="ActivityLevel"></select>
     </div>
     <div class="form-button">
         <button type="submit" value="Submit">Submit</button>
