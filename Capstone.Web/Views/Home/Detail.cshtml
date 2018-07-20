@@ -12,10 +12,6 @@
         System.Reflection.PropertyInfo[] properties = type.GetProperties();
         foreach (var prop in properties)
         {
-            if (true)
-            {
-
-            }
 
             if (prop.Name == "ImageName")
             {
@@ -32,18 +28,17 @@
     @foreach (var w in Model.ParkWeather)
     {
 
-    <div class="forecast-day">
-        <img class="weather-img" src="~/images/@(w.Forecast).png" />
-        <p>@DateTime.Today.AddDays(w.DayOfForecast - 1).ToShortDateString()</p>
-        <p><strong>High</strong></p>
-        <p class="temperature">@w.High</p>
-        <p><strong>Low</strong></p>
-        <p class="temperature">@w.Low</p>
-        <p>@w.Forecast</p>
-    </div>
+        <div class="forecast-day">
+            <img class="weather-img" src="~/images/@(w.Forecast).png" />
+            <p>@DateTime.Today.AddDays(w.DayOfForecast - 1).ToShortDateString()</p>
+            <p><strong>High</strong></p>
+            <p class="temperature">@w.High</p>
+            <p><strong>Low</strong></p>
+            <p class="temperature">@w.Low</p>
+            <p>@w.Forecast</p>
+        </div>
 
     }
 </div>
 
-<button onclick="toggle-temp()" id="convertBtn">Convert To C</button>
-
+<button onclick="toggleTemp()" id="convertBtn">Convert To C</button>

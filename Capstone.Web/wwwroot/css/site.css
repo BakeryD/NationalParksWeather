@@ -68,3 +68,39 @@ form > * {
     margin-left:1.75em;
     margin-right:1.75em;
 }
+
+
+/********************************
+    HOME STYLES -- INDEX.CSHTML
+*********************************/
+
+/**{
+    border: 1px solid red;
+}*/
+
+body {
+    background-image: url(../images/woodgrain-bg.png);
+}
+
+#allParksHome{
+    display: grid;
+    grid-template-columns: 2;
+}
+
+.park-listing {
+
+    
+    width: 100%;
+}
+
+.content-card {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0px;
+}
+
+
+
+.park-listing-info  > * {
+    padding: 0px 10px;
+}

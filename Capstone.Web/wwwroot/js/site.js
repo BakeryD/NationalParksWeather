@@ -59,7 +59,7 @@ function showTemp() {
     }
 };
 
-function toggle-temp() {
+function toggleTemp() {
     var buttonTxt = document.getElementById("convertBtn");
     if (buttonTxt.innerHTML == 'Convert To C') {
         buttonTxt.innerHTML = 'Convert To F';

@@ -6,17 +6,19 @@
 
 @* TABLE VS DIV *@
 
-<table class="table table-striped">
-    <tbody>
-        @foreach (var park in Model)
-        {
-            <tr>
-                <td><a asp-action="Detail" asp-controller="Home" asp-route-id="@park.ParkCode"><img src="~/images/@park.ImageName" /></a></td>
-                <td>@park.Name</td>
-                <td>@park.State</td>
-                <td>@park.Description</td>
-            </tr>
-        }
-    </tbody>
 
-</table>
+<div id="allParksHome">
+    @foreach (var park in Model)
+     {
+        <div class="park-listing">
+            <div class="content-card">
+                <a asp-action="Detail" asp-controller="Home" asp-route-id="@park.ParkCode"><img src="~/images/@park.ImageName" /></a>
+                <div class="park-listing-info">
+                    <h2>@park.Name</h2>
+                    <h4>@park.State</h4>
+                    <p class="park-description">@park.Description</p>
+                </div>
+            </div>
+        </div>
+     }
+</div>ntent
