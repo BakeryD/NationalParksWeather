@@ -9,16 +9,21 @@
 
 <div id="allParksHome">
     @foreach (var park in Model)
-     {
-        <div class="park-listing">
-            <div class="content-card">
-                <a asp-action="Detail" asp-controller="Home" asp-route-id="@park.ParkCode"><img src="~/images/@park.ImageName" /></a>
-                <div class="park-listing-info">
-                    <h2>@park.Name</h2>
-                    <h4>@park.State</h4>
-                    <p class="park-description">@park.Description</p>
-                </div>
+    {
+    <a asp-action="Detail" asp-controller="Home" asp-route-id="@park.ParkCode" class="park-link" id="@park.ImageName">
+        
+        @*<div class="park-listing" >*@
+            @*<img class="paint-border-top" src="~/images/texture-top.png" />*@
+            <div class="name-div"><h2 class="name">@park.Name</h2></div>
+            <div class="state-description">
+                <h4 class="state">@park.State</h4>
+                <p class="park-description">@park.Description</p>
             </div>
-        </div>
+
+            @*<img class="paint-border-btm" src="~/images/texture-bottom.png" />*@
+        @*</div>*@
+        
+    </a>
+    
      }
-</div>ntent
+</div>

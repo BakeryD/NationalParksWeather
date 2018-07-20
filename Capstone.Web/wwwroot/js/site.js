@@ -94,3 +94,10 @@ function convertToC(num) {
     // console.log("this is convert to C");
     return ((intNum - 32) * 5 / 9).toPrecision(2);
 };
+
+
+/* JS FOR STYLING HOME */
+
+var parklisting = document.getElementsByClassName("park-listing");
+
+parklisting
