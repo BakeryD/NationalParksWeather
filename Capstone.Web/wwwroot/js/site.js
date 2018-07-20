@@ -6,7 +6,7 @@
 //document.onload.setCookie("Unit", "F", 1);
 
 
-if (document.getElementsByClassName("detail-img") != null) {
+if (document.getElementsByClassName("detail-img").length > 0) {
     window.onload = showTemp();
 }
 
@@ -52,10 +52,15 @@ function showTemp() {
          btnTxt.innerHTML = 'Convert To F';
 
         for (var i = 0; i < temps.length; i++) {
-            temps[i].textContent = convertToC(temps[i].textContent);
-            console.log(temps[i]);
+            temps[i].textContent = convertToC(temps[i].textContent) + " °" + getCookie("Unit");
+            //console.log(temps[i]);
 
         }
+    } else if (currentUnit == null || currentUnit == "F") {
+        for (var i = 0; i < temps.length; i++) {
+            temps[i].textContent += " °F"
+        } 
+
     }
 };
 
@@ -65,7 +70,7 @@ function alertMe() {
         buttonTxt.innerHTML = 'Convert To F';
         var temps = document.getElementsByClassName("temperature");
         for (var i = 0; i < temps.length; i++) {
-            temps[i].textContent = convertToC(temps[i].textContent);
+            temps[i].textContent = convertToC(temps[i].textContent) + " °" + getCookie("Unit");
            // console.log(temps[i]);
 
         }
@@ -75,7 +80,7 @@ function alertMe() {
         buttonTxt.innerHTML = 'Convert To C';
         var temps = document.getElementsByClassName("temperature");
         for (var i = 0; i < temps.length; i++) {
-            temps[i].textContent = convertToF(temps[i].textContent);
+            temps[i].textContent = convertToF(temps[i].textContent) + " °" + getCookie("Unit");
             //console.log(temps[i]);
         }
     }

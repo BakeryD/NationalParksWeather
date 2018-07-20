@@ -18,8 +18,7 @@ namespace Capstone.Web.Controllers
 
         public IList<string> parkCodes => dal.GetParkCodes();
 
-        public IEnumerable<SelectListItem> ParkCodes => parkCodes.Select(code => new SelectListItem() { Text = code, Value = code });
-
+       // public List<SelectListItem> ParkCodes => parkCodes.Select(code => new SelectListItem() { Text = code, Value = code });
         /// <summary>
         /// Display all the previous survey results.
         /// </summary>
@@ -34,6 +33,8 @@ namespace Capstone.Web.Controllers
         [HttpGet]
         public IActionResult New()
         {
+            var ParkCodes = parkCodes.Select(code => new SelectListItem() { Text = code, Value = code });
+           ParkCodes = ParkCodes.Append(new SelectListItem() { Text = "--Select A Park", Value = null,Selected=true,Disabled=true});
             ViewBag.ParkCodes = ParkCodes;
 
             return View();
@@ -51,6 +52,8 @@ namespace Capstone.Web.Controllers
             }
             else
             {
+                var ParkCodes = parkCodes.Select(code => new SelectListItem() { Text = code, Value = code });
+                ParkCodes.Append(new SelectListItem() { Text = "--Select A Park", Value = null , Selected=true, Disabled=true});
                 ViewBag.ParkCodes = ParkCodes;
                 return View(survey);
             }
