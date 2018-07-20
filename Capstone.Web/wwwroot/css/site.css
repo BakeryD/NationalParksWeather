@@ -35,11 +35,18 @@ body {
         display: none;
     }
 }
-
+/*** NEW.CSHTML ***/
 .field-validation-error {
 font-weight:bold;    
 }
 
+
+
+form > * {
+    margin-top: 2rem;
+}
+
+/*** DETAIL.CSHTML ***/
 .park-info {
     display: flex;
     flex-wrap: wrap;
