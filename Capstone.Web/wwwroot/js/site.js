@@ -14,7 +14,7 @@ function setCookie(cname, cvalue, exdays) {
 
 
 
-function alertMe() {
+function toggle-temp() {
     var buttonTxt = document.getElementById("convertBtn");
     if (buttonTxt.innerHTML == 'Convert To C') {
         buttonTxt.innerHTML = 'Convert To F';
