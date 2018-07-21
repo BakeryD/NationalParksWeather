@@ -3,31 +3,40 @@
     ViewData["Title"] = Model.Park.Name;
 }
 
-<h2>@Model.Park.Name</h2>
-<img class="detail-img" src="~/images/@Model.Park.ImageName" />
-
+<h2 class="text-center">@Model.Park.Name</h2>
+<div class="detail-park-specs">
+    <img class="detail-img center-block" src="~/images/@Model.Park.ImageName" />
+    <div class="park-specs">
+        <h4 class="park-acreage"><strong>Acreage : </strong>@(Model.Park.Acreage) acres</h4>
+        <h4 class="park-animal-species"><strong>Animal Species Present : </strong>@Model.Park.NumberOfAnimalSpecies</h4>
+        <h4 class="park-visitor-count"><strong>Annual Visitors : </strong>@Model.Park.AnnualVisitorCount.ToString("N0")</h4>
+        <h4 class="park-climate"><strong>Climate : </strong>@Model.Park.Climate</h4>
+        <h4 class="park-elevation"><strong>Elevation : </strong>@Model.Park.ElevationInFt ft.</h4>
+        <h4 class="park-entry-fee"><strong>Entry Fee : </strong>@Model.Park.EntryFee.ToString("C2")</h4>
+        <h4 class="park-year-founded"><strong>Year Founded : </strong>@Model.Park.YearFounded</h4>
+    </div>
+</div>
 
 <div class="park-info">
+<<<<<<< HEAD
     @{ Type type = Model.Park.GetType();
         System.Reflection.PropertyInfo[] properties = type.GetProperties();
         foreach (var prop in properties)
         {
+=======
+    <br />
+    <h3 class="park-description"><strong>Description</strong><br /><small>@Model.Park.Description</small></h3>
+    <div class="park-specs">
+        <blockquote>@Model.Park.InspirationalQuote<br /><small>@Model.Park.QuoteSource</small></blockquote>
+>>>>>>> f3cd3da188584698d37c67848f0317e5d6e33d8b
 
-            if (prop.Name == "ImageName")
-            {
-            }
-            else
-            {
-                <h4><strong>@prop.Name</strong><small><br />@prop.GetValue(Model.Park)</small></h4>
-            }
-        }
-    }
+    </div>
 </div>
 <div class="weather">
-
     @foreach (var w in Model.ParkWeather)
     {
 
+<<<<<<< HEAD
         <div class="forecast-day">
             <img class="weather-img" src="~/images/@(w.Forecast).png" />
             <p>@DateTime.Today.AddDays(w.DayOfForecast - 1).ToShortDateString()</p>
@@ -37,6 +46,18 @@
             <p class="temperature">@w.Low</p>
             <p>@w.Forecast</p>
         </div>
+=======
+    <div class="forecast-day">
+        <img class="weather-img" src="~/images/@(w.Forecast).png" />
+        <p>@DateTime.Today.AddDays(w.DayOfForecast - 1).ToShortDateString()</p>
+        <p><strong>High</strong></p>
+        <p class="temperature">@w.High</p>
+        <p><strong>Low</strong></p>
+        <p class="temperature">@w.Low</p>
+        <p>@w.Forecast</p>
+        <p class="text-danger text-capitalize">@w.Advisory</p>
+    </div>
+>>>>>>> f3cd3da188584698d37c67848f0317e5d6e33d8b
 
     }
 </div>

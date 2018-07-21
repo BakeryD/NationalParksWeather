@@ -7,9 +7,12 @@
 
 <form method="post" asp-action="new" asp-controller="survey">
     <div class="survey-form-park">
-        <label asp-for="ParkCode">Favorite 
-        National Park</label>
+        <label asp-for="ParkCode">
+            Favorite
+            National Park
+        </label>
         <select style="margin-left:1rem;" asp-for="ParkCode" asp-items="ViewBag.ParkCodes"></select>
+        <span class="text-danger" asp-validation-for="ParkCode"></span>
     </div>
 
     <div class="survey-form-email">
@@ -17,13 +20,15 @@
         <input style="margin-left:12rem;" type="email" asp-for="Email" />
         <span class="text-danger" asp-validation-for="Email"></span>
     </div>
-    <div class="survey-form-state" >
+    <div class="survey-form-state">
         <label asp-for="State"></label>
-        <select style="margin-left: 12.3rem;" asp-for="State" asp-items="Survey.StatesOfResidence"></select> 
+        <select style="margin-left: 12.3rem;" asp-for="State" asp-items="Survey.StatesOfResidence"></select>
+        <span class="text-danger" asp-validation-for="State"></span>
     </div>
     <div class="survey-form-activity">
         <label asp-for="ActivityLevel"></label>
         <select style="margin-left: 7rem;" asp-items="Survey.ActivityLevels" asp-for="ActivityLevel"></select>
+        <span class="text-danger" asp-validation-for="ActivityLevel"></span>
     </div>
     <div class="form-button">
         <button type="submit" value="Submit">Submit</button>
