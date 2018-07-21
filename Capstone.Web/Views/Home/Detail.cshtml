@@ -18,10 +18,17 @@
 </div>
 
 <div class="park-info">
+<<<<<<< HEAD
+    @{ Type type = Model.Park.GetType();
+        System.Reflection.PropertyInfo[] properties = type.GetProperties();
+        foreach (var prop in properties)
+        {
+=======
     <br />
     <h3 class="park-description"><strong>Description</strong><br /><small>@Model.Park.Description</small></h3>
     <div class="park-specs">
         <blockquote>@Model.Park.InspirationalQuote<br /><small>@Model.Park.QuoteSource</small></blockquote>
+>>>>>>> f3cd3da188584698d37c67848f0317e5d6e33d8b
 
     </div>
 </div>
@@ -29,6 +36,17 @@
     @foreach (var w in Model.ParkWeather)
     {
 
+<<<<<<< HEAD
+        <div class="forecast-day">
+            <img class="weather-img" src="~/images/@(w.Forecast).png" />
+            <p>@DateTime.Today.AddDays(w.DayOfForecast - 1).ToShortDateString()</p>
+            <p><strong>High</strong></p>
+            <p class="temperature">@w.High</p>
+            <p><strong>Low</strong></p>
+            <p class="temperature">@w.Low</p>
+            <p>@w.Forecast</p>
+        </div>
+=======
     <div class="forecast-day">
         <img class="weather-img" src="~/images/@(w.Forecast).png" />
         <p>@DateTime.Today.AddDays(w.DayOfForecast - 1).ToShortDateString()</p>
@@ -39,9 +57,9 @@
         <p>@w.Forecast</p>
         <p class="text-danger text-capitalize">@w.Advisory</p>
     </div>
+>>>>>>> f3cd3da188584698d37c67848f0317e5d6e33d8b
 
     }
 </div>
 
-<button onclick="alertMe()" id="convertBtn">Convert To C</button>
-
+<button onclick="toggleTemp()" id="convertBtn">Convert To C</button>

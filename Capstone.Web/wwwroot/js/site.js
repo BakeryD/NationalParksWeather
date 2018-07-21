@@ -58,7 +58,7 @@ function showTemp() {
     }
 };
 
-function alertMe() {
+function toggleTemp() {
     var buttonTxt = document.getElementById("convertBtn");
     if (buttonTxt.innerHTML == 'Convert To C') {
         buttonTxt.innerHTML = 'Convert To F';
@@ -87,3 +87,10 @@ function convertToC(num) {
     var intNum = parseInt(num);
     return ((intNum - 32) * 5 / 9).toPrecision(2);
 };
+
+
+/* JS FOR STYLING HOME */
+
+var parklisting = document.getElementsByClassName("park-listing");
+
+parklisting

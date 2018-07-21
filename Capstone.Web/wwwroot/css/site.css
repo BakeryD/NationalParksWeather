@@ -1,15 +1,15 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 body {
-    padding-top: 50px;
     padding-bottom: 20px;
+    font-family: 'Oswald', sans-serif;
 }
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 /* Carousel */
@@ -99,4 +99,136 @@ div.survey-img > blockquote {
     width: 15%;
     margin-left: 1.2rem;
     margin-right: 1.2rem;
+}
+
+
+/********************************
+    HOME STYLES -- INDEX.CSHTML
+*********************************/
+
+/**{
+    border: 1px solid red;
+}*/
+
+body {
+    background-image: url(../images/woodgrain-bg.png);
+}
+header {
+    height:200px;
+}
+
+#logo{
+    height: 100%;
+    display: inline-block;
+}
+
+#allParksHome {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    
+}
+
+a:link{
+    text-decoration: none;
+}
+
+.park-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+    width:45%;
+    margin: 20px 0px;
+    color: white;
+    position: relative;
+}
+.park-listing {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    /*height: 100%;*/
+    /*width: 100%;*/
+   
+}
+.name-div h2 {
+    margin: 0;
+    vertical-align: top;
+    text-shadow: 2px 2px rgb(0, 0, 0);
+    /*align-self:flex-start;
+    margin: 0;*/
+}
+
+.state-description{
+    padding: 0px 10px;
+    display: none;
+}
+
+.state-description:hover {
+    padding: 0px 10px;
+    display: block;
+}
+
+
+.paint-border-top{
+    vertical-align: top;
+    width: 100%;
+
+}
+
+.paint-border-btm {
+    vertical-align: bottom;
+    width: 100%;
+}
+
+#cvnp\.jpg {
+    background-image: url(../images/cvnp.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#enp\.jpg {
+    background-image: url(../images/enp.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#gcnp\.jpg {
+    background-image: url(../images/gcnp.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#gnp\.jpg {
+    background-image: url(../images/gnp.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#gsmnp\.jpg {
+    background-image: url(../images/gsmnp.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#gtnp\.jpg {
+    background-image: url(../images/gtnp.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#mrnp\.jpg {
+    background-image: url(../images/mrnp.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#rmnp\.jpg {
+    background-image: url(../images/rmnp.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#ynp\.jpg {
+    background-image: url(../images/ynp.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#ynp2\.jpg {
+    background-image: url(../images/ynp2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
