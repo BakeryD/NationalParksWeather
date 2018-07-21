@@ -9,7 +9,7 @@ namespace Capstone.Web.Models
     public class SurveySqlDAL
     {
         private string ConnectionString;
-
+       
         public SurveySqlDAL(string constring)
         {
             this.ConnectionString = constring;
