@@ -18,10 +18,10 @@ namespace Capstone.Web.Models
         public IList<FavoriteParkModel> GetAllResults()
         {
             var results = new List<FavoriteParkModel>();
-            string sql = $"select park.parkName,park.parkCode, Count(survey_result.state) as surveyCount " +
+            string sql = $"select park.parkName,park.parkCode,park.inspirationalQuote, park.inspirationalQuoteSource, Count(survey_result.state) as surveyCount " +
                          $"from park " +
                          $"Inner Join survey_result on survey_result.parkCode = park.parkCode " +
-                         $"group by park.parkName,park.parkCode " +
+                         $"group by park.parkName,park.parkCode,park.inspirationalQuote, park.inspirationalQuoteSource " +
                          $"Order by Count(survey_result.state) DESC";
             try
             {
@@ -51,7 +51,9 @@ namespace Capstone.Web.Models
             {
                 ParkCode = Convert.ToString(reader["parkCode"]),
                 Name = Convert.ToString(reader["parkName"]),
-                SurveyCount = Convert.ToInt32(reader["surveyCount"])
+                SurveyCount = Convert.ToInt32(reader["surveyCount"]),
+                Quote = Convert.ToString(reader["inspirationalQuote"]),
+                QuoteSource = Convert.ToString(reader["inspirationalQuoteSource"])
             };
         }
 

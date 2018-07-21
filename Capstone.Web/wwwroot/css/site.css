@@ -37,14 +37,38 @@ body {
 }
 /*** NEW.CSHTML ***/
 .field-validation-error {
-font-weight:bold;    
+    font-weight: bold;
 }
-
-
 
 form > * {
     margin-top: 2rem;
 }
+
+/*** SURVEY INDEX.CSHTML ***/
+.survey-park-img {
+    height: 40%;
+}
+
+div.survey-img > blockquote {
+    border-left: hidden;
+}
+
+    div.survey-img > blockquote:hover {
+        border-left: 5px solid #eee !important;
+    }
+
+.survey-img:hover {
+    font-size: 3.5rem;
+    color: #d3d3d3;
+    font-weight: bold;
+}
+
+.fav-park-img-quote {
+    background-repeat: no-repeat;
+    background-size: inherit;
+}
+
+
 
 /*** DETAIL.CSHTML ***/
 .detail-park-specs {
@@ -55,24 +79,24 @@ form > * {
 }
 
 .park-specs {
-    margin-top:auto;
-    margin-bottom:auto;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .weather {
-    display:flex;
-    flex-wrap:wrap;
-    flex-direction:row;
-    justify-content:center;
-    min-width:513px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    min-width: 513px;
 }
 
 .weather-img {
-    height:5em;
+    height: 5em;
 }
 
 .forecast-day {
-    width:15%;
-    margin-left:1.2rem;
-    margin-right:1.2rem;
+    width: 15%;
+    margin-left: 1.2rem;
+    margin-right: 1.2rem;
 }

@@ -9,6 +9,8 @@ namespace Capstone.Web.Models
     {
         public string Name { get; set; }
         public string ParkCode { get; set; }
+         public string Quote { get; set; }
+         public string QuoteSource { get; set; }
         public int SurveyCount { get; set; }
         public string ImageName => ParkCode.ToLower() + ".jpg";
     }

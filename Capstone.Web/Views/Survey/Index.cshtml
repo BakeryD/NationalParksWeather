@@ -3,7 +3,7 @@
     ViewData["Title"] = "Index";
 }
 
-@if(TempData["Show_Message"] != null)
+@if (TempData["Show_Message"] != null)
 {
     <p class="alert-success text-center text-capitalize">Your survey was successfuly submitted!</p>
 }
@@ -21,7 +21,13 @@
     @foreach (var fav in Model)
     {
         <tr>
-            <td><img class="survey-park-img" src="~/images/@fav.ImageName" /></td>
+            <td class="fav-park-img-quote img-responsive"
+                style="background-image:url(../images/@fav.ImageName);">
+                <div class="survey-img"
+                     style="min-height:300px;width:55%;">
+                    <blockquote>@fav.Quote <br /><small>@fav.QuoteSource</small> </blockquote>
+                </div>
+            </td>
             <td>@fav.Name</td>
             <td>@fav.SurveyCount Surveys submitted</td>
         </tr>
