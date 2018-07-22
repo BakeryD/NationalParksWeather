@@ -32,11 +32,11 @@ function getCookie(cname) {
 function switchCookie() {
     var unit = getCookie("Unit");
     if (unit == "F") {
-        setCookie("Unit", "C", 1);
+        setCookie("Unit", "C", 2);
     } else if (unit == "C") {
-        setCookie("Unit", "F", 1);
+        setCookie("Unit", "F", 2);
     } else if (unit == "") {
-        setCookie("Unit", "C", 1);
+        setCookie("Unit", "C", 2);
     }
 
 }
@@ -51,7 +51,7 @@ function showTemp() {
         for (var i = 0; i < temps.length; i++) {
             temps[i].textContent = convertToC(temps[i].textContent) + " °" + getCookie("Unit");
         }
-    } else if (currentUnit == null || currentUnit == "F") {
+    } else if (currentUnit == "" || currentUnit == "F") {
         for (var i = 0; i < temps.length; i++) {
             temps[i].textContent += " °F"
         }
@@ -91,7 +91,7 @@ function convertToC(num) {
 
 /* JS FOR STYLING HOME */
 
-var parklisting = document.getElementsByClassName("park-listing");
+//var parklisting = document.getElementsByClassName("park-listing");
 
 //parklisting
 
