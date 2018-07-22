@@ -46,7 +46,8 @@ form > * {
 
 /*** SURVEY INDEX.CSHTML ***/
 .survey-park-img {
-    height: 40%;
+    height: 50%;
+    
 }
 
 div.survey-img > blockquote {
@@ -57,9 +58,9 @@ div.survey-img > blockquote {
         border-left: 5px solid #eee !important;
     }
 
-.survey-img:hover {
+.survey-img:hover > * {
     font-size: 3.5rem;
-    color: #d3d3d3;
+    color: cornsilk;
     font-weight: bold;
 }
 
@@ -133,6 +134,10 @@ a:link{
     text-decoration: none;
 }
 
+a.park-link:hover > .name-div > h2.name {
+    color:#00b0f5;
+}
+
 .park-link {
     display: flex;
     flex-direction: column;
@@ -155,7 +160,7 @@ a:link{
 .name-div h2 {
     margin: 0;
     vertical-align: top;
-    text-shadow: 2px 2px rgb(0, 0, 0);
+    text-shadow: 3px 4px 6px rgb(0, 0, 0);
     /*align-self:flex-start;
     margin: 0;*/
 }
@@ -182,53 +187,3 @@ a:link{
     width: 100%;
 }
 
-#cvnp\.jpg {
-    background-image: url(../images/cvnp.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-#enp\.jpg {
-    background-image: url(../images/enp.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-#gcnp\.jpg {
-    background-image: url(../images/gcnp.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-#gnp\.jpg {
-    background-image: url(../images/gnp.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-#gsmnp\.jpg {
-    background-image: url(../images/gsmnp.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-#gtnp\.jpg {
-    background-image: url(../images/gtnp.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-#mrnp\.jpg {
-    background-image: url(../images/mrnp.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-#rmnp\.jpg {
-    background-image: url(../images/rmnp.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-#ynp\.jpg {
-    background-image: url(../images/ynp.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-#ynp2\.jpg {
-    background-image: url(../images/ynp2.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}

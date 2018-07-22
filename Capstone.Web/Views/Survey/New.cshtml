@@ -1,9 +1,9 @@
 ﻿@model Survey
 @{
-    ViewData["Title"] = "NewSurvey";
+    ViewData["Title"] = "New Survey";
 }
 
-<h2>Favorite Park Survey</h2>
+<h2>Daily Favorite Park Survey</h2>
 
 <form method="post" asp-action="new" asp-controller="survey">
     <div class="survey-form-park">
@@ -17,17 +17,17 @@
 
     <div class="survey-form-email">
         <label asp-for="Email"></label>
-        <input style="margin-left:12rem;" type="email" asp-for="Email" />
+        <input style="margin-left:9.6rem;" type="email" asp-for="Email" />
         <span class="text-danger" asp-validation-for="Email"></span>
     </div>
     <div class="survey-form-state">
         <label asp-for="State"></label>
-        <select style="margin-left: 12.3rem;" asp-for="State" asp-items="Survey.StatesOfResidence"></select>
+        <select style="margin-left: 9.6rem;" asp-for="State" asp-items="Survey.StatesOfResidence"></select>
         <span class="text-danger" asp-validation-for="State"></span>
     </div>
     <div class="survey-form-activity">
         <label asp-for="ActivityLevel"></label>
-        <select style="margin-left: 7rem;" asp-items="Survey.ActivityLevels" asp-for="ActivityLevel"></select>
+        <select style="margin-left: 5.7rem;" asp-items="Survey.ActivityLevels" asp-for="ActivityLevel"></select>
         <span class="text-danger" asp-validation-for="ActivityLevel"></span>
     </div>
     <div class="form-button">

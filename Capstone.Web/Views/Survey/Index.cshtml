@@ -20,16 +20,15 @@
     </thead>
     @foreach (var fav in Model)
     {
+        string s = "Survey";
+        if (fav.SurveyCount>1)
+        {
+            s += "s";
+        }
         <tr>
-            <td class="fav-park-img-quote img-responsive"
-                style="background-image:url(../images/@fav.ImageName);">
-                <div class="survey-img"
-                     style="min-height:300px;width:55%;">
-                    <blockquote>@fav.Quote <br /><small>@fav.QuoteSource</small> </blockquote>
-                </div>
-            </td>
+            <td><img class="survey-park-img" src="~/images/@fav.ImageName" /></td>
             <td>@fav.Name</td>
-            <td>@fav.SurveyCount Surveys submitted</td>
+            <td>@fav.SurveyCount @s submitted</td>
         </tr>
     }
 </table>

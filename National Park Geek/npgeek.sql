@@ -43,7 +43,7 @@ CREATE TABLE weather
 (
 	parkCode varchar(10) not null,
 	fiveDayForecastValue int not null,
-	low int not null,
+	low int not null,	--FAHRENHEIT
 	high int not null,
 	forecast varchar(100) not null,
 
@@ -131,8 +131,8 @@ INSERT INTO weather VALUES ('RMNP',5,30,43,'rain');
 COMMIT;
 
 --Query for Favorite Park Page
-select park.parkName,park.parkCode, Count(survey_result.state)
+select park.parkName,park.parkCode,park.inspirationalQuote, park.inspirationalQuoteSource, Count(survey_result.state) as surveyCount
 from park
 Inner Join survey_result on survey_result.parkCode = park.parkCode
-group by park.parkName,park.parkCode
+group by park.parkName,park.parkCode,park.inspirationalQuote, park.inspirationalQuoteSource
 

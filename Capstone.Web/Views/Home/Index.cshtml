@@ -10,7 +10,9 @@
 <div id="allParksHome">
     @foreach (var park in Model)
     {
-    <a asp-action="Detail" asp-controller="Home" asp-route-id="@park.ParkCode" class="park-link" id="@park.ImageName">
+        @*   Added in-line styles becuase it saves us from having to write a css selector/style for each park image   *@
+
+    <a asp-action="Detail" asp-controller="Home" asp-route-id="@park.ParkCode" class="park-link" style="background-image:url(../images/@park.ImageName);background-repeat:no-repeat;background-size:cover;">
         
         @*<div class="park-listing" >*@
             @*<img class="paint-border-top" src="~/images/texture-top.png" />*@

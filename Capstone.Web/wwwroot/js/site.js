@@ -12,7 +12,7 @@ function setCookie(cname, cvalue, exdays) {
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
     var expires = "expires=" + d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-};
+}
 
 function getCookie(cname) {
     var name = cname + "=";
@@ -27,7 +27,7 @@ function getCookie(cname) {
         }
     }
     return "";
-};
+}
 
 function switchCookie() {
     var unit = getCookie("Unit");
@@ -39,14 +39,14 @@ function switchCookie() {
         setCookie("Unit", "C", 1);
     }
 
-};
+}
 
 function showTemp() {
     var currentUnit = getCookie("Unit");
     var temps = document.getElementsByClassName("temperature");
     var btnTxt = document.getElementById("convertBtn");
     if (currentUnit == "C") {
-         btnTxt.innerHTML = 'Convert To F';
+        btnTxt.innerHTML = 'Convert To F';
 
         for (var i = 0; i < temps.length; i++) {
             temps[i].textContent = convertToC(temps[i].textContent) + " °" + getCookie("Unit");
@@ -54,9 +54,9 @@ function showTemp() {
     } else if (currentUnit == null || currentUnit == "F") {
         for (var i = 0; i < temps.length; i++) {
             temps[i].textContent += " °F"
-        } 
+        }
     }
-};
+}
 
 function toggleTemp() {
     var buttonTxt = document.getElementById("convertBtn");
@@ -75,7 +75,7 @@ function toggleTemp() {
         }
     }
     switchCookie();
-};
+}
 
 
 
@@ -93,4 +93,15 @@ function convertToC(num) {
 
 var parklisting = document.getElementsByClassName("park-listing");
 
-parklisting
+//parklisting
+
+$(".park-link").hover(function () {
+    var info = $(this).find(".state-description");
+    info.css({ "display": "block", "color": "cornsilk", "font-size": "1.5rem", "background-color": "rgba(10, 10, 10, 0.575)" });
+},
+    function () {
+        var info = $(".state-description");
+        info.css("display", "none");
+    }
+);
+
