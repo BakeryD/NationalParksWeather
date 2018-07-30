@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Capstone.Web.Models
 {
-    public class WeatherSqlDAL
+    public class WeatherSqlDAL : IWeatherDAL
     {
         private string ConnectionString;
         public WeatherSqlDAL(string conString)

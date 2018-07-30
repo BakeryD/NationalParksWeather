@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Capstone.Web.Models
 {
-    public class ParkSqlDAL
+    public class ParkSqlDAL : IParkDAL
     {
         private string ConnectionString;
 

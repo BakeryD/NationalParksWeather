@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Capstone.Web.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -29,8 +30,11 @@ namespace Capstone.Web
                 options.CheckConsentNeeded = context => false;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
-
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+            services.AddTransient<ISurveyDAL>(dal => new SurveySqlDAL(Configuration["ConnectionStrings:SQL"]));
+            services.AddTransient<IParkDAL>(dal => new ParkSqlDAL(Configuration["ConnectionStrings:SQL"]));
+            services.AddTransient<IWeatherDAL>(dal => new WeatherSqlDAL(Configuration["ConnectionStrings:SQL"]));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -48,7 +52,7 @@ namespace Capstone.Web
 
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
+            app.UseSession();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

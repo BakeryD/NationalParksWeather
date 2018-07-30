@@ -10,13 +10,13 @@ namespace Capstone.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private ParkSqlDAL pdal;
-        private WeatherSqlDAL wdal;
+        private IParkDAL pdal;
+        private IWeatherDAL wdal;
 
-        public HomeController()
+        public HomeController(IParkDAL pDal,IWeatherDAL wDal)
         {
-            this.pdal = new ParkSqlDAL(@"Data Source=.\sqlexpress;Initial Catalog=NPGeek;Integrated Security=True");
-            this.wdal = new WeatherSqlDAL(@"Data Source=.\sqlexpress;Initial Catalog=NPGeek;Integrated Security=True");
+            this.pdal = pDal;
+            this.wdal = wDal;
         }
 
         public IActionResult Index()

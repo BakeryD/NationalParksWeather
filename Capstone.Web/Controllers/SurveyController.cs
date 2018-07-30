@@ -10,10 +10,10 @@ namespace Capstone.Web.Controllers
 {
     public class SurveyController : Controller
     {
-        private readonly SurveySqlDAL dal;
-        public SurveyController()
+        private ISurveyDAL dal;
+        public SurveyController(ISurveyDAL dal)
         {
-            this.dal = new SurveySqlDAL(@"Data Source =.\Sqlexpress; Initial Catalog = NPGeek; Integrated Security = True");
+            this.dal = dal; 
         }
 
         public IList<string> parkCodes => dal.GetParkCodes();

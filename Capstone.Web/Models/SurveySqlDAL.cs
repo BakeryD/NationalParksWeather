@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Capstone.Web.Models
 {
-    public class SurveySqlDAL
+    public class SurveySqlDAL : ISurveyDAL
     {
         private string ConnectionString;
        
@@ -85,7 +85,7 @@ namespace Capstone.Web.Models
             }
         }
 
-        public Survey MapRowToSurvey(SqlDataReader reader)
+        private Survey MapRowToSurvey(SqlDataReader reader)
         {
             return new Survey()
             {
